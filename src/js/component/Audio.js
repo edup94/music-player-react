@@ -7,11 +7,12 @@ export function Audio(props) {
 			onClick={() => {
 				props.setNextSong(props.url);
 				props.setSongId(props.id - 1);
+				props.changeSong(props.url);
 			}}
-			className="bg-secondary rounded mb-1 text-dark">
-			<div className="d-flex">
-				<p className="numero mx-1 text-white">{props.id}</p>
-				<p className="titulo text-white">{props.name}</p>
+			className="bg-dark rounded mb-1">
+			<div className="d-flex canciones">
+				<p className="numero mx-3 text-secondary">{props.id}</p>
+				<p className="titulo mr-3 text-white">{props.name}</p>
 			</div>
 		</div>
 	);
@@ -22,5 +23,6 @@ Audio.propTypes = {
 	name: PropTypes.string,
 	url: PropTypes.string,
 	setSongId: PropTypes.func,
-	setNextSong: PropTypes.func
+	setNextSong: PropTypes.func,
+	changeSong: PropTypes.func
 };
